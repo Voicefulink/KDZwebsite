@@ -36,8 +36,9 @@
                     $piss1=$matches[1]+10*$matches[0];
                     $piss2=$matches[3]+10*$matches[2];
                     $piss3=$matches[7]+10*$matches[6]+100*$matches[5]+1000*$matches[4];
-                    if($piss2>12){if($piss1>31){$erorr=1;}}
-                    if($piss2>12){if($piss2>31){$error=1;}}
+                    if($piss2>12){$nepiss=1;}
+                    if($nepiss==1){if($piss1>12){$error=1;}}
+                    
                     if($error==0)
                     {
                     
@@ -45,9 +46,9 @@
                     if($error==0){
                     if($piss2<=12){echo("$piss1.$piss2.$piss3");}
                    else if($piss2>12){echo("$piss2.$piss1.$piss3");}
-                    else{echo("ошибка 48");}
+                    else{echo("ошибка 49");}
                     }
-                    else{echo("Недопустимый формат даты формат даты");}
+                    else{echo("Недопустимый формат даты");}
             }
             else{echo("Ошибка");}
         }
