@@ -19,12 +19,12 @@
         <div id="content">
             <h1>Task1</h1>
             <?php
-            {
+            if(isset($_GET['search'])){
                 $text = mb_strtolower($_GET['search']);
                 
 
-                $sss=mb_strtolower($_GET['read']);
-          if (preg_match_all("~\w*$sss\w*~",$text,$matches)){
+                $sas=mb_strtolower($_GET['read']);
+          if (preg_match_all("/\b$sas\b/ui",$text,$matches)){
            //print_r($matches);
             echo count($matches, COUNT_RECURSIVE)-1;
           }
@@ -32,7 +32,7 @@
            else {
                echo"ошибка";
         }
-    }
+    }else{echo("Ошибка");}
 ?>
         </div>
         <footer>
