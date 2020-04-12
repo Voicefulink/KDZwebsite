@@ -36,16 +36,17 @@
                     $piss1=$matches[1]+10*$matches[0];
                     $piss2=$matches[3]+10*$matches[2];
                     $piss3=$matches[7]+10*$matches[6]+100*$matches[5]+1000*$matches[4];
-                    if($piss2>12){$nepiss=1;}
-                    if($nepiss==1){if($piss1>12){$error=1;}}
+                    if($piss2>12){$piss=$piss2;$piss2=$piss1;$piss1=$piss;}
+                    if($piss2>12){$error=1;}
                     
                     if($error==0)
                     {
-                    
+                    if($piss2==2){if($piss1>28){$error=1;echo"Февральская ошибка";}}
+                    if($piss2<10){$piss2="0$piss2";}
+                    if($piss1<10){$piss1="0$piss1";}
                     }
                     if($error==0){
                     if($piss2<=12){echo("$piss1.$piss2.$piss3");}
-                   else if($piss2>12){echo("$piss2.$piss1.$piss3");}
                     else{echo("ошибка 49");}
                     }
                     else{echo("Недопустимый формат даты");}
