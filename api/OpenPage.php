@@ -18,7 +18,7 @@
         </nav>
         <div id="content">
             <h1>Исходники</h1>
-            <a href=https://drive.google.com/open?id=1_LgXLr7f20BoyCedjqPIWwZM_Okpr6Nl>Исходный код</a> 
+            <a href=https://github.com/Voicefulink/KDZwebsite.git>Исходный код</a> 
 
             
         </div>

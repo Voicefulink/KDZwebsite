@@ -19,7 +19,7 @@
         <div id="content">
             <h1>Task3</h1>
             <p>Извините, но мне не хватило костылей чтобы выполнить это задание.</p>
-            <FORM method= "GET" action="text3.php">
+            <FORM method= "GET" action="KDZtext3.php">
             <INPUT name="find" type="text">Адрес
 <BR><BR>
 

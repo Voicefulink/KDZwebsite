@@ -19,7 +19,7 @@
         <div id="content">
             <h1>Task2</h1>
             <p>Заменяет одно слово на другое</p>
-            <FORM method= "GET" action="text2.php">
+            <FORM method= "GET" action="KDZtext2.php">
 <INPUT name="search" type="text">Текст
 <BR><BR>
 <INPUT name="read" type="text">Заменяемое слово
@@ -28,7 +28,27 @@
 <BR><BR>
 <INPUT type="submit" value= "Замена">
 </FORM>
-           
+<?php
+            if(isset($_GET['search']))
+            {if(isset($_GET['read']))
+                {if(isset($_GET['write'])){
+                $text=$_GET['search'];
+                $read=$_GET['read'];
+                $write=$_GET['write'];
+                if(empty($text|$read|$write)){echo"Ошибка";}
+                else{
+                $fix=preg_replace("/\b$read\b/ui",$write,$text);
+               
+               echo nl2br("Измененный текст\n\n");
+                echo nl2br("$fix\n\n");
+                echo nl2br("Изначальный текст\n\n");
+                {echo("$text\n\n");}
+            }
+                
+           }
+        }
+    }
+?>
 
             
                

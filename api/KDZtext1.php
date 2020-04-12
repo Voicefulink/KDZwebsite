@@ -19,13 +19,30 @@
         <div id="content">
             <h1>Task1</h1>
             <p>Выводит количество искомых слов в тексте</p>
-            <FORM method= "GET" action="text1.php">
+            <FORM method= "GET" action="KDZtext1.php">
 <INPUT name="search" type="text">Текст
 <BR><BR>
 <INPUT name="read" type="text">Искомое слово
 <BR><BR>
 <INPUT type="submit" value= "Поиск">
 </FORM>
+<?php
+            if(isset($_GET['search'])){
+                $text = mb_strtolower($_GET['search']);
+                
+
+                $sas=mb_strtolower($_GET['read']);
+          if (preg_match_all("/\b$sas\b/ui",$text,$matches)){
+           //print_r($matches);
+            echo nl2br("\nНайдено слов в тексте -");
+           echo count($matches, COUNT_RECURSIVE)-1;
+          }
+           
+           else {
+               echo"ошибка";
+        }
+    }
+?>
            
         </div>
         <footer>
