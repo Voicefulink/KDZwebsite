@@ -25,6 +25,7 @@
            <p><a href="/api/KDZtext3.php">task3</a></p>
            <p><a href="/api/KDZtext4.php">task4</a></p>
            <p><a href="/api/KDZtext5.php">task5</a></p>
+           <p>Лабораторные работы</p><hr>
            <p><a href="/api/laba.php">laba</a></p>
         </div>
         <footer>

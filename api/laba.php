@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>кдз№3</title>
+    <title>Л</title>
     <meta name="description" content="sample site for ISBN">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="/css/normalize.css">
@@ -18,7 +18,6 @@
         </nav>
         <div id="content">
             <h1>Лабараторная работа</h1>
-            
             <FORM method= "GET" action="laba.php">
             <INPUT name="res" type="text">Значение X
             <BR><BR>
@@ -26,13 +25,20 @@
             <BR><BR>
             <INPUT name="res3" type="text">Значение z
             <BR><BR>
+            <INPUT name="res4" type="text">Значение n
+            <BR><BR>
             <select name="find">
         <option disabled>Выберите вариант задания</option>    
+        <option disabled>Лабораторная работа№1</option>  
         <option value="1">1</option>
         <option value="3">3</option>
         <option value="8">8</option>
         <option value="9">9</option>
-        <option value="31">Справка</option>
+        <option value="20">20</option>
+        <option disabled>Лабораторная работа№2</option>
+        <option value="38">8</option>  
+        
+        <option value="61">Справка</option>
     </select>
 <BR><BR>
 <INPUT type="submit" value= "Решение">
@@ -44,9 +50,11 @@
                     $x=$_GET['res']; 
                     $y=$_GET['res2'];
                     $z=$_GET['res3'];   
+                    
                     echo nl2br("\nx=$x\n");
                     echo nl2br("\ny=$y\n");
                     echo nl2br("\nz=$z\n");
+                    if($n=$_GET['res4']){echo nl2br("\nn=$n\n");}
                     //echo($name);
                     //1
                     if($name==1){$result=0;
@@ -152,10 +160,83 @@
                             echo nl2br("\nОтвет==$result1\n");
                         } else{echo nl2br("\nz не может быть меньше 0.001 и больше 0.999");}
                     }
-                    //17
+                    //20
+                    if($name==20)
+                    {
+                        $result=0;
+                        //Задача№1
+                        //1)
+                        if(1){
+                        $result=6*$y*($x**3)+4*exp(-$x)+(log(7*$x*$x))/(log(3));
+                        echo nl2br("\n1)Ответ==$result\n");}else{echo nl2br("\nНельзя делить на ноль");}
+                        //2)
+                        if(((($x**3)+$y)**2)+1>0){
+                         
+                            $result=abs(((sin($x*$x+$y*$y))**3)/((((($x**3)+$y)**2)+1)**(1/2)));
+                            echo nl2br("\n2)Ответ==$result\n");}else{echo nl2br("\nНельзя делить на ноль");}
+                        //Задача№2
+                        if($n=$_GET['res4']){   
+                         $result=($x*$x/$z-$z)/($x*$n/$z-$y);
+                         $result1=($x-$n*$result)/$z;
+                            echo nl2br("\nКорни системы уравнений x*X+y*Y=z и z*X+n*Y=x равны \nX==$result1\nY==$result");}
+                            else{echo nl2br("\nВведите n\n");}
+                        //Задача№3
+                        if(1)
+                        {
+                        
+                        } else{echo nl2br("\n");}
+                    }
+
+
+
+
+
+                    //Лабараторная номер 2
+                    if($n=$_GET['res4']){}else{$name=0;}
+                    //8
+                    if($name==38)
+                    {
+                        $result=0;
+                        //Задача№1
+                        //1)
+                        if($x>10){
+                        $result=$x*($x**$y-1);
+                        echo nl2br("\n1)F(x,y)==$result\n");}
+                        //else{echo nl2br("\nНельзя делить на ноль");}
+                        
+                        if(0<$x && $x<=10){
+                        $result=min($x,$y);
+                        echo nl2br("\n1)F(x,y)==$result\n");}
+                        //else{echo nl2br("\nСторона квадрата не может быть отрицательной или равняться нулю\n");}
+                            
+                        if($x<=0){
+                        $result=7-$y;
+                        echo nl2br("\n1)F(x,y)==$result\n");}
+                        //else{echo nl2br("\nСторона квадрата не может быть отрицательной или равняться нулю\n");}
+
+                        //Задача№2
+                        if(1)
+                        {
+                        $result=$y*$y-(4*$x*$z);
+                        echo nl2br("\nДискрименант равен==$result\n");
+                        if($result>0){
+                            $result1[1]=($y*(-1)+($result**(1/2)))/(2*$x); 
+                            $result1[2]=($y*(-1)-($result**(1/2)))/(2*$x);
+                            echo nl2br("\nКорни уравнения равны $result1[1] и $result1[2] \n");}
+                            elseif($result==0)
+                            {$result1=-$y/(2*$x);echo nl2br("\nКорень уравнения равен $result1\n");}
+                            else{echo nl2br("\nКорней нет\n");}
+                        } 
+                        //Задача№3
+                        if(1<=min($x,$y,$z,$n)&& 8>=max($x,$y,$z,$n))
+                        {
+                        if(($z==$x+2||$z==$x-2||$z==$x+1||$z==$x-1)||($n==$y+2||$n==$y-2||$n==$y+1||$n==$y-1)){echo nl2br("\n3)Конь на координатах х и у может перейти на координаты z и n\n");}else{echo nl2br("\n3)Конь на координатах х и у не может перейти на координаты z и n\n");}
+                        }else{echo nl2br("\n3)Координаты находятся за шахматной доской\n");}
+
+                    }
                     
                 }
-                if($name==31)
+                if($name==61)
                 {
                     echo nl2br("\nСправка\nПеременные x y z используются в первом и втором задании, в третьем задании используется только переменная z\nВывод решения происходит следующим образом, под номерами 1) и 2) выводится решение первого задания, далее без номера выводится решение второго задания, под номером 3) выводится решение третьего задания.\n");
                 }
