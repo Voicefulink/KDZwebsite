@@ -182,8 +182,11 @@
                             else{echo nl2br("\nВведите n\n");}
                         //Задача№3
                         if(1)
-                        {
-                        
+                        {preg_match_all('|[\d+]|', $z, $result1, PREG_PATTERN_ORDER);
+                            $result=$result1[0];
+                            //print_r($result);
+                            echo nl2br("\n3)\n");
+                            for($i=0;$i<count($result);$i++){echo nl2br("\n$result[$i]");}
                         } else{echo nl2br("\n");}
                     }
 
