@@ -18,7 +18,8 @@
         </nav>
         <div id="content">
             <h1>КДЗ</h1>
-            
+            <p>КДЗ на 27.03.20</p><hr>
+           <p><a href="/api/KDZForm.php">Form</a></p>
            <p>КДЗ на 12.04.20</p><hr>
            <p><a href="/api/KDZtext1.php">task1</a></p>
            <p><a href="/api/KDZtext2.php">task2</a></p>
